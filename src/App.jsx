@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Componentes
 
@@ -77,45 +77,34 @@ const App = () => {
   return (
 
       <Router>
+  <div className="container">
+    <Header />
 
-        <div className="container">
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <AddTask handleTaskAddition={handleTaskAddition} />
+            <Tasks
+              tasks={tasks}
+              handleTaskClick={handleTaskClick}
+              handleTaskDeletion={handleTaskDeletion}
+            />
+          </>
+        }
+      />
 
-          <Header />
+      <Route
+        path="/details"
+        element={<TaskDetails />}
+      />
+    </Routes>
+  </div>
+</Router>
 
-          <Route 
-            path='/' 
-            exact 
-            render={() => (
+// 1:16:00
 
-              <>
-              
-                <AddTask handleTaskAddition={handleTaskAddition} />
-
-                <Tasks 
-                  tasks={tasks} 
-                  handleTaskClick={handleTaskClick} 
-                  handleTaskDeletion={handleTaskDeletion}
-                />
-
-              </>
-
-            )} 
-
-          />
-
-          <Route 
-            path='/details' 
-            exact 
-            render={TaskDetails}
-          />
-
-          {/* 1:15:50 */}
-
-        </div>
-
-      </Router>
-
-      // 1:10:00
 
   );
 
