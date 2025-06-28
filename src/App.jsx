@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Componentes
 
@@ -13,6 +13,8 @@ import Header from './components/Header.jsx';
 import Tasks from './components/Tasks';
 
 import AddTask from './components/AddTask';
+
+import TaskDetails from './components/TaskDetails.jsx';
 
 // Estilos
 
@@ -80,13 +82,34 @@ const App = () => {
 
           <Header />
 
-          <AddTask handleTaskAddition={handleTaskAddition} />
+          <Route 
+            path='/' 
+            exact 
+            render={() => (
 
-          <Tasks 
-            tasks={tasks} 
-            handleTaskClick={handleTaskClick} 
-            handleTaskDeletion={handleTaskDeletion}
+              <>
+              
+                <AddTask handleTaskAddition={handleTaskAddition} />
+
+                <Tasks 
+                  tasks={tasks} 
+                  handleTaskClick={handleTaskClick} 
+                  handleTaskDeletion={handleTaskDeletion}
+                />
+
+              </>
+
+            )} 
+
           />
+
+          <Route 
+            path='/details' 
+            exact 
+            render={TaskDetails}
+          />
+
+          {/* 1:15:50 */}
 
         </div>
 
