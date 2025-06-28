@@ -2,7 +2,7 @@ import React from "react";
 
 import Task from './Task';
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, handleTaskClick, handleTaskDeletion }) => {
 
     return (
 
@@ -10,7 +10,10 @@ const Tasks = ({ tasks }) => {
         
             {tasks.map(task => (
 
-                <Task task={task}/>
+                <Task 
+                    task={task} handleTaskClick={handleTaskClick} 
+                    handleTaskDeletion={handleTaskDeletion} 
+                />
                 
             ))};
 
