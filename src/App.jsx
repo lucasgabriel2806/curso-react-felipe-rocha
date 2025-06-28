@@ -1,12 +1,22 @@
+// React e Bibliotecas
+
 import React, { useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import Tasks from './components/Tasks.jsx';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import './App.css';
+// Componentes
+
+import Header from './components/Header.jsx';
+
+import Tasks from './components/Tasks';
 
 import AddTask from './components/AddTask';
+
+// Estilos
+
+import './App.css';
 
 const App = () => {
 
@@ -64,9 +74,11 @@ const App = () => {
 
   return (
 
-      <>
+      <Router>
 
         <div className="container">
+
+          <Header />
 
           <AddTask handleTaskAddition={handleTaskAddition} />
 
@@ -78,7 +90,9 @@ const App = () => {
 
         </div>
 
-      </>
+      </Router>
+
+      // 1:10:00
 
   );
 
