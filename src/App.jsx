@@ -77,34 +77,43 @@ const App = () => {
   return (
 
       <Router>
-  <div className="container">
-    <Header />
 
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <AddTask handleTaskAddition={handleTaskAddition} />
-            <Tasks
-              tasks={tasks}
-              handleTaskClick={handleTaskClick}
-              handleTaskDeletion={handleTaskDeletion}
+        <div className="container">
+
+          <Header />
+
+          <Routes>
+
+            <Route
+              path="/"
+              element={
+
+                <>
+
+                  <AddTask handleTaskAddition={handleTaskAddition} />
+
+                  <Tasks
+                    tasks={tasks}
+                    handleTaskClick={handleTaskClick}
+                    handleTaskDeletion={handleTaskDeletion}
+                  />
+
+                </>
+
+              }
+
             />
-          </>
-        }
-      />
 
-      <Route
-        path="/details"
-        element={<TaskDetails />}
-      />
-    </Routes>
-  </div>
-</Router>
+            <Route
+              path="/:taskTitle"
+              element={<TaskDetails />}
+            />
 
-// 1:16:00
+          </Routes>
 
+        </div>
+
+      </Router>
 
   );
 
