@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import Button from './Button';
 
@@ -10,7 +10,13 @@ const TaskDetais = () => {
 
     const params = useParams();
 
-    // console.log(params);
+    const navigate = useNavigate();
+
+    const handleBackButtonClick = () => {
+
+        navigate(-1);
+
+    };
 
     return ( 
 
@@ -18,7 +24,11 @@ const TaskDetais = () => {
         
             <div className="back-button-container">
 
-                <Button>Voltar</Button>
+                <Button 
+                    onClick={handleBackButtonClick}
+                >
+                    Voltar
+                </Button>
 
             </div>
 

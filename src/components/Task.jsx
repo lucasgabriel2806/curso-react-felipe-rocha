@@ -2,20 +2,19 @@ import React from 'react';
 
 import { CgClose, CgInfo } from 'react-icons/cg';
 
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import './Task.css';
 
 const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleTaskDetailsClick = () => {
 
-        history.push(`/${task.title}`);
-        // 1:43:00
+        navigate(`/${task.title}`);
 
-    }
+    };
 
     return (
 
@@ -40,7 +39,7 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
 
                 <button 
                     className="see-task-details-button" 
-                    onClick={() => handleTaskDeletion(task.id)}
+                    onClick={() => handleTaskDetailsClick()}
                 >
 
                     <CgInfo />
