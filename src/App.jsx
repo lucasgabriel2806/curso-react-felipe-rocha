@@ -89,6 +89,8 @@ const App = () => {
     const newTasks = tasks.filter(task => task.id !== taskId);
 
     setTasks(newTasks);
+    
+    alert('Deletando tarefa');
 
   }
 
