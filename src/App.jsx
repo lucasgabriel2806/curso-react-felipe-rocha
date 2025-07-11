@@ -37,13 +37,19 @@ const App = () => {
     // },
   ]);
 
+  // Executa só na primeira execução.
+  
   useEffect(() => {
+
+    // Buscando dados da API
 
     const fetchTasks = async () => {
 
       const { data } = await axios.get(
         'https://jsonplaceholder.cypress.io/todos?_limit=5'
       );
+
+      // definindo que o state tasks terá os dados da API 
 
       setTasks(data);
 
@@ -67,6 +73,8 @@ const App = () => {
 
   }
 
+  // Adicinando uma nova task
+
   const handleTaskAddition = (taskTitle) => {
 
     const newTasks = [
@@ -83,6 +91,8 @@ const App = () => {
     setTasks(newTasks);
 
   };
+
+  // Deletando uma task
 
   const handleTaskDeletion = (taskId) => {
 

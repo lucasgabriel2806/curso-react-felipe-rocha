@@ -8,6 +8,8 @@ import './Task.css';
 
 const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
 
+    // Hook para navegar
+
     const navigate = useNavigate();
 
     const handleTaskDetailsClick = () => {
@@ -25,6 +27,8 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
                 {task.title}
 
             </div>
+
+            {/* Icones */}
 
             <div className="buttons-container">
 
