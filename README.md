@@ -1,7 +1,10 @@
 <h1 align="center">Curso de React - by Felipe Rocha <img src="public/logo192.png" alt="logo do react" style="width: 30px; display: inline-block; margin-right: 100px;"> </h1>
 
-Curso de React ministrado pelo youtuber Felipe Rocha com
-projeto To Do List.
+<div align="center">
+
+Curso de React do youtuber Felipe Rocha com projeto To Do List.
+
+</div>
 
 <br>
 
