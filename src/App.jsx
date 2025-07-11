@@ -25,16 +25,16 @@ import './App.css';
 const App = () => {
 
   const [tasks, setTasks] = useState([
-    {
-      id: '1',
-      title: 'Estudar Programação',
-      completed: false,
-    },
-    {
-      id: '2',
-      title: 'Ler livros',
-      completed: true,
-    },
+    // {
+    //   id: '1',
+    //   title: 'Estudar Programação',
+    //   completed: false,
+    // },
+    // {
+    //   id: '2',
+    //   title: 'Ler livros',
+    //   completed: true,
+    // },
   ]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const App = () => {
     const fetchTasks = async () => {
 
       const { data } = await axios.get(
-        'https://jsonplaceholder.cypress.io/todos?_limit=10'
+        'https://jsonplaceholder.cypress.io/todos?_limit=5'
       );
 
       setTasks(data);
